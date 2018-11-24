@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathModeliing", "MathModeliing\MathModeliing.csproj", "{7DA805DF-B8A7-4B13-967F-439E544F5FF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{3576F61C-13F0-4A7A-B1F2-BD22205B9ED8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DA805DF-B8A7-4B13-967F-439E544F5FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA805DF-B8A7-4B13-967F-439E544F5FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA805DF-B8A7-4B13-967F-439E544F5FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA805DF-B8A7-4B13-967F-439E544F5FF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3576F61C-13F0-4A7A-B1F2-BD22205B9ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3576F61C-13F0-4A7A-B1F2-BD22205B9ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3576F61C-13F0-4A7A-B1F2-BD22205B9ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3576F61C-13F0-4A7A-B1F2-BD22205B9ED8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {876F3A43-143A-41E2-B985-898C4A8C6C8A}
+	EndGlobalSection
+EndGlobal
