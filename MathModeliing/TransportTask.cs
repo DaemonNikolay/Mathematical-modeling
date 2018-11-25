@@ -8,46 +8,73 @@ namespace MathModeliing
 {
     public class TransportTask
     {
-        private List<int[]> table;
+        private readonly List<int[]> table;
 
         public TransportTask(int[] a1, int[] a2, int[] a3, int[] a4, int[] needs)
         {
+            if (a1 == null || a2 == null || a3 == null || a4 == null || needs == null)
+            {
+                throw new ArgumentNullException("Data for table exist null");
+            }
+
             table = new List<int[]> {
                 a1, a2, a3, a4, needs
             };
         }
 
-        public double MethodDoublePreference()
+        public double MethodDoublePreference() => MethodDoublePreference(table);
+
+        public static double MethodDoublePreference(List<int[]> table)
         {
-            var table = this.table;
-
-            var minLine = new List<int>();
-            foreach (var value in table)
+            if (table == null)
             {
-                minLine.Add(value.Min());
-            }
-            minLine.Remove(minLine[minLine.Count - 1]);
-
-            var minColumn = new List<int>();
-            for (var i = 0; i < table.Count - 1; i++)
-            {
-                var column = new List<int>();
-                for (var j = 0; j < table[0].Length - 1; j++)
-                {
-                    column.Add(table[j][i]);
-                }
-
-                minColumn.Add(column.Min());
+                return double.MinValue;
             }
 
-            var test = minLine;
+            var minLine = MinLine(table);
+            var minColumn = MinColumn(table);
 
             return double.MinValue;
         }
 
-        public double MethodPotential()
+        private static List<Cell> MinColumn(List<int[]> table)
         {
-            return double.MinValue;
+            if (table == null)
+            {
+                return null;
+            }
+
+            var minColumn = new List<Cell>();
+            for (var i = 0; i < table.Count - 1; i++)
+            {
+                var column = new int[table[i].Length - 1];
+                for (var j = 0; j < table[i].Length - 1; j++)
+                {
+                    column[j] = table[j][i];
+                }
+
+                var min = column.Min();
+                minColumn.Add(new Cell(Array.IndexOf(column, min), i, min));
+            }
+
+            return minColumn;
+        }
+
+        private static List<Cell> MinLine(List<int[]> table)
+        {
+            if (table == null)
+            {
+                return null;
+            }
+
+            var minLine = new List<Cell>();
+            for (var i = 0; i < table.Count - 1; i++)
+            {
+                var min = table[i].Min();
+                minLine.Add(new Cell(i, Array.IndexOf(table[i], min), min));
+            }
+
+            return minLine;
         }
 
         private class Cell
