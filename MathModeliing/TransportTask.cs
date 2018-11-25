@@ -49,5 +49,19 @@ namespace MathModeliing
         {
             return double.MinValue;
         }
+
+        private class Cell
+        {
+            public int PostitionX { get; }
+            public int PostitionY { get; }
+            public int Value { get; set; }
+
+            public Cell(int postitionX, int postitionY, int value)
+            {
+                PostitionX = postitionX;
+                PostitionY = postitionY;
+                Value = value;
+            }
+        }
     }
 }
