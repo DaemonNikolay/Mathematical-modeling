@@ -10,17 +10,42 @@ namespace MathModeliing
     {
         private List<int[]> table;
 
-        public TransportTask(int[] A1, int[] A2, int[] A3, int[] A4, int[] Needs)
+        public TransportTask(int[] a1, int[] a2, int[] a3, int[] a4, int[] needs)
         {
-
-        }
-
-        public double MethodPotential()
-        {
-            return double.MinValue;
+            table = new List<int[]> {
+                a1, a2, a3, a4, needs
+            };
         }
 
         public double MethodDoublePreference()
+        {
+            var table = this.table;
+
+            var minLine = new List<int>();
+            foreach (var value in table)
+            {
+                minLine.Add(value.Min());
+            }
+            minLine.Remove(minLine[minLine.Count - 1]);
+
+            var minColumn = new List<int>();
+            for (var i = 0; i < table.Count - 1; i++)
+            {
+                var column = new List<int>();
+                for (var j = 0; j < table[0].Length - 1; j++)
+                {
+                    column.Add(table[j][i]);
+                }
+
+                minColumn.Add(column.Min());
+            }
+
+            var test = minLine;
+
+            return double.MinValue;
+        }
+
+        public double MethodPotential()
         {
             return double.MinValue;
         }
