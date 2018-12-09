@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MathModeliing\MathModeliing.csproj" />
+    <ProjectReference Include="..\MathModelling\MathModelling.csproj" />
   </ItemGroup>
 
 </Project>
